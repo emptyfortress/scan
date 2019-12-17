@@ -4,8 +4,14 @@
 	.center
 		.zag Основные файлы
 		.plus
-			i.icon-folder-o
-			i.icon-scanner
+			v-tooltip(top)
+				template(v-slot:activator="{on}")
+					i.icon-folder-o(v-on="on")
+				span Файл из файловой системы
+			v-tooltip(top)
+				template(v-slot:activator="{on}")
+					i.icon-scanner(v-on="on")
+				span Сканировать документ
 </template>
 
 <script>
@@ -31,7 +37,6 @@ h2 {
 	background: #eee;
 	display: flex;
 	padding: .2rem .5rem;
-	/* justify-content: center; */
 }
 .plus i { 
 	margin: 0 .3rem;

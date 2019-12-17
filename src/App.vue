@@ -1,31 +1,29 @@
 <template lang="pug">
-#app
+v-app
 	img(src="./assets/logo.svg").logo
-	Files
-
+	v-content
+		Files
 </template>
 
 <script>
-import Files from './components/Files.vue'
+import Files from './components/Files'
 
 export default {
-  name: 'app',
+  name: 'App',
+
   components: {
-		Files
-  }
+    Files
+  },
+
+  data: () => ({
+    //
+  }),
 }
 </script>
 
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  /* text-align: center; */
-  color: #2c3e50;
-  /* margin-top: 60px; */
-}
+<style scoped lang="scss">
 .logo {
 	width: 200px;
 }
+
 </style>
