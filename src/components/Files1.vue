@@ -1,28 +1,30 @@
 <template lang="pug">
 .files
+	br
+	br
 	.center
 		.zag Основные файлы
 		.plus.rel
-			.sp(@mouseover="submenu = true" @mouseleave="submenu = false")
-				v-tooltip(top)
+			.sp(@click="submenu = !submenu")
+				v-tooltip(top open-delay="700")
 					template(v-slot:activator="{on}")
-						i.icon-folder-o(v-on="on" @click="submenu = !submenu")
+						i.icon-folder-o(v-on="on")
 						transition(name="slide-x-reverse-transition")
 							.submenu(v-if="submenu")
 								span +дополнительный
 								span +основной
 					span Из файловой системы
-			.sp(@mouseover="submenu1 = true" @mouseleave="submenu1 = false")
-				v-tooltip(top)
+			.sp(@click="submenu1 = !submenu1")
+				v-tooltip(top open-delay="700")
 					template(v-slot:activator="{on}")
-						i.icon-scanner(v-on="on" @click="submenu1 = !submenu1")
+						i.icon-scanner(v-on="on")
 						transition(name="slide-x-reverse-transition")
 							.submenu1(v-if="submenu1")
 								span +основной
 								span +дополнительный
 					span Сканировать документ
 			.sp
-				v-tooltip(top)
+				v-tooltip(top open-delay="700")
 					template(v-slot:activator="{on}")
 						i.icon-sign(v-on="on")
 					span Подписать
@@ -44,6 +46,12 @@ export default {
 </script>
 
 <style scoped lang="scss">
+h2 {
+	font-weight: 300;
+	text-align: center;
+	margin-bottom: 1rem;
+
+}
 .center {
 	width: 800px;
 	margin: 0 auto;
