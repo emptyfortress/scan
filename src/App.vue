@@ -2,24 +2,28 @@
 v-app
 	img(src="./assets/logo.svg").logo
 	v-content
-		h2 Сканирование и файловый контрол
+		h2(@click="scan = true") Сканирование и файловый контрол
 		Files
 		Files1
+	//- Dialog(scan="scan")
 </template>
 
 <script>
-import Files from './components/Files'
-import Files1 from './components/Files1'
+import Files from '@/components/Files'
+import Files1 from '@/components/Files1'
+// import Dialog from './components/Dialog'
 
 export default {
   name: 'App',
 
   components: {
     Files,
-    Files1
+    Files1,
+		// Dialog
   },
 
   data: () => ({
+		// scan: false
     //
   }),
 }
