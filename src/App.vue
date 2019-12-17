@@ -22,6 +22,9 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.v-application {
+	padding: 1rem; 
+}
 .logo {
 	width: 200px;
 }
