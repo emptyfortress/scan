@@ -88,63 +88,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.v-card {
-	height: 300px;
-	position: relative;
-}
-.v-card__actions {
-	position: absolute;
-	bottom: 1rem;
-	right: 1rem;
-}
-.center {
-	width: 800px;
-	margin: 0 auto;
-	background: #eee;
-	display: flex;
-	padding: .2rem .5rem;
-}
-.tab {
-	width: 800px;
-	margin: 0 auto;
-	margin-top: .5rem;
-	p {
-		color: #666;
-	}
-}
-.rel {
-	position: relative;
-}
-.zag {
-	flex-grow: 1;
-	font-weight: bold;
-}
-.submenu, .submenu1 {
-	cursor: pointer;
-	position: absolute;
-	top: 0;
-	right: 1rem;
-	color: blue;
-	padding: 0 .5rem;
-	span {
-		cursor: pointer;
-		margin-right: .7rem;
-		&:hover {
-			border-bottom: 1px dotted blue;
-			color: lighten(blue, 20%);
-		}
-	}
-}
-.submenu1 {
-	background: #eee;
-	right:1.25rem;
-}
-.sp {
-	position: relative;
-	display: inline-block;
-	cursor: pointer;
-	margin-left: .7rem;
-}
 
 
 </style>

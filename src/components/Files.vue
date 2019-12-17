@@ -84,7 +84,8 @@ export default {
 
 </script>
 
-<style scoped lang="scss">
+<!-- <style scoped lang="scss"> -->
+<style lang="scss">
 
 .v-card {
 	height: 300px;

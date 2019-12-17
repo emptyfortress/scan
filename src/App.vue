@@ -5,12 +5,14 @@ v-app
 		h2(@click="scan = true") Сканирование и файловый контрол
 		Files
 		Files1
+		Files2
 	//- Dialog(scan="scan")
 </template>
 
 <script>
 import Files from '@/components/Files'
 import Files1 from '@/components/Files1'
+import Files2 from '@/components/Files2'
 // import Dialog from './components/Dialog'
 
 export default {
@@ -19,6 +21,7 @@ export default {
   components: {
     Files,
     Files1,
+    Files2,
 		// Dialog
   },
 
