@@ -9,9 +9,9 @@ v-app
 					li(v-for="item in pages" )
 						a(:class="item.active ? 'active' : ''" @click="handlePage(item)") {{ item.text }}
 			v-flex(xs8)
-				//- Files
 				Files1(v-if="page === 1")
-				//- Files2
+				//- Files
+				Files2(v-if="page === 2")
 	//- Dialog(scan="scan")
 </template>
 
@@ -64,7 +64,7 @@ export default {
 h2 {
 	font-weight: 300;
 	margin-bottom: 4rem;
-	margin-top: 4rem;
+	margin-top: 1rem;
 }
 .myrow {
 	display: flex;
@@ -74,8 +74,6 @@ h2 {
 	background: #ccc;
 }
 .menu {
-	/* background: #eee; */
-	/* padding: 1rem; */
 	ul {
 		list-style: none;
 		margin: 0;

@@ -1,16 +1,26 @@
 <template lang="pug">
 div
+	h3 Тип 3. FilePiker in Table разметка создание вариант 2
 	.files
 		br
-		br
 		.center
-			.zag Контрол в таблице
+			.zag Основные файлы
 			.plus.rel
 				.sp
 					v-tooltip(top)
 						template(v-slot:activator="{on}")
-							i.icon-sign(v-on="on")
-						span Подписать
+							i.icon-folder-o(v-on="on")
+						span Загрузить из папки
+				.sp
+					v-tooltip(top)
+						template(v-slot:activator="{on}")
+							i.icon-scan(v-on="on")
+						span Загрузить со сканера
+				.sp
+					v-tooltip(top)
+						template(v-slot:activator="{on}")
+							i.icon-plus(v-on="on")
+						span А здесь что?
 	table
 		tr
 			td.rel
