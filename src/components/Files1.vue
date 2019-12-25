@@ -1,12 +1,12 @@
 <template lang="pug">
 div
+	h3 Тип 2. Filelist разметка просмотр
 	.files
-		br
 		br
 		.center
 			.zag Основные файлы
 			.plus.rel
-				.sp(@click="submenu = !submenu")
+				.sp(@click="submenuToggle")
 					v-tooltip(top)
 						template(v-slot:activator="{on}")
 							i.icon-folder-o(v-on="on")
@@ -14,8 +14,8 @@ div
 								.submenu(v-if="submenu")
 									span(@click="dia(2)") +дополнительный
 									span(@click="dia(1)") +основной
-						span Из файловой системы
-				.sp(@click="submenu1 = !submenu1")
+						span Загрузить из папки
+				.sp(@click="submenu1Toggle")
 					v-tooltip(top)
 						template(v-slot:activator="{on}")
 							i.icon-scan(v-on="on")
@@ -23,7 +23,7 @@ div
 								.submenu1(v-if="submenu1")
 									span(@click="dia(4)") +дополнительный
 									span(@click="dia(3)") +основной
-						span Сканировать документ
+						span Загрузить со сканера
 				.sp
 					v-tooltip(top)
 						template(v-slot:activator="{on}")
@@ -58,6 +58,14 @@ export default {
 		}
 	},
 	methods: {
+		submenuToggle () {
+			this.submenu = !this.submenu
+			this.submenu1 = false
+		},
+		submenu1Toggle () {
+			this.submenu1 = !this.submenu1
+			this.submenu = false
+		},
 		close () {
 			this.dialog = false
 		},
@@ -88,6 +96,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
+h3 {
+	font-weight: 300;
+}
+
 
 
 </style>
