@@ -19,10 +19,10 @@ div
 				.sp
 					v-tooltip(top)
 						template(v-slot:activator="{on}")
-							i.icon-plus(v-on="on")
+							i.icon-plus(v-on="on" @click="addRow")
 						span А здесь что?
 	table
-		tr
+		tr(v-for="item in rows")
 			td.rel
 				v-btn(icon large @click="add3 = !add3").large
 					i(:class="add3 ? 'rot' : ''").icon-plus
@@ -33,7 +33,7 @@ div
 			td.right column
 			td.right column
 			td.right
-				v-btn(icon large).large
+				v-btn(icon large @click="del").large
 					i.icon-trash
 
 	v-dialog(v-model="dialog" width="500")
@@ -50,6 +50,9 @@ div
 export default {
 	data () {
 		return {
+			rows: [
+				{}
+			],
 			add3: false,
 			dialog: false,
 			main: false,
@@ -57,6 +60,13 @@ export default {
 		}
 	},
 	methods: {
+		addRow () {
+			let a = {}
+			this.rows.push(a)
+		},
+		del () {
+			this.rows = []
+		},
 		close () {
 			this.dialog = false
 			this.main = false
