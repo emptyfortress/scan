@@ -1,6 +1,6 @@
 <template lang="pug">
 v-app
-	v-container
+	.cont
 		img(src="./assets/logo.svg").logo
 		h2(@click="scan = true") Файловый контрол со сканированием
 		.myrow
@@ -10,16 +10,20 @@ v-app
 						a(:class="item.active ? 'active' : ''" @click="handlePage(item)") {{ item.text }}
 			v-flex(xs8)
 				Files1(v-if="page === 1")
-				//- Files
+				//- //- Files
 				Files2(v-if="page === 2")
-	//- Dialog(scan="scan")
+				Files3(v-if="page === 3")
+				Files4(v-if="page === 4")
+		//- Dialog(scan="scan")
 </template>
 
 <script>
 import Files from '@/components/Files'
 import Files1 from '@/components/Files1'
 import Files2 from '@/components/Files2'
-// import Dialog from './components/Dialog'
+import Files3 from '@/components/Files3'
+import Files4 from '@/components/Files4'
+// import Dialog from '@/components/Dialog'
 
 export default {
   name: 'App',
@@ -28,6 +32,8 @@ export default {
     Files,
     Files1,
     Files2,
+    Files3,
+    Files4,
 		// Dialog
   },
 	methods: {
@@ -36,7 +42,6 @@ export default {
 			let a = this.pages.filter( (item) => item.text === e.text)
 			a[0].active = true
 			this.page = a[0].id
-			console.log('page ' + this.page)
 		}
 		
 	},

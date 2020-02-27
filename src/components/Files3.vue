@@ -1,6 +1,6 @@
 <template lang="pug">
 div
-	h3 Тип 3. FilePiker in Table разметка создание вариант 2
+	h3 Тип 4. filePiker in Table просмотр 2
 	.files
 		br
 		.center
@@ -9,27 +9,21 @@ div
 				.sp
 					v-tooltip(top)
 						template(v-slot:activator="{on}")
-							i.icon-folder-o(v-on="on")
+							i.icon-folder-o(v-on="on" @click="addRow")
 						span Загрузить из папки
 				.sp
 					v-tooltip(top)
 						template(v-slot:activator="{on}")
-							i.icon-scan(v-on="on")
+							i.icon-scan(v-on="on" @click="addRow")
 						span Загрузить со сканера
-				.sp
-					v-tooltip(top)
-						template(v-slot:activator="{on}")
-							i.icon-plus(v-on="on" @click="addRow")
-						span А здесь что?
+				//- .sp
+				//- 	v-tooltip(top)
+				//- 		template(v-slot:activator="{on}")
+				//- 			i.icon-plus(v-on="on" @click="addRow")
+				//- 		span А здесь что?
 	table
 		tr(v-for="item in rows")
-			td.rel
-				v-btn(icon large @click="add3 = !add3").large
-					i(:class="add3 ? 'rot' : ''").icon-plus
-				transition(name="slide-x-transition")
-					.iconsrow(v-show="add3")
-						i.icon-folder-o(@click="dia(1)")
-						i.icon-scan(@click="dia(2)")
+			td.rel Новый файл.doc
 			td.right column
 			td.right column
 			td.right
